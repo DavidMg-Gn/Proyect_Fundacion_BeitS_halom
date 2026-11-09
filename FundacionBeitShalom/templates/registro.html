@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="contenedor">
+
+    <header class="encabezado">
+
+        <h1>Fundación Beit Shalom</h1>
+
+        <p>Programa de colaboradores</p>
+
+        <h2>¡Queremos conocerte!</h2>
+
+        <p>
+            Tu disposición para ayudar puede marcar
+            una diferencia en la vida de un niño.
+        </p>
+
+    </header>
+
+    <form id="formRegistro"
+          method="POST"
+          action="{{ url_for('colaborador.registrar') }}">
+
+        {{ form.hidden_tag() }}
+
+        <section class="seccion">
+
+            <h3>01. Información personal</h3>
+
+            <label for="nombre">
+                Nombre completo
+            </label>
+
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                minlength="5"
+                maxlength="150"
+                placeholder="Tu nombre completo"
+            >
+
+            <label for="pais">
+                País de residencia
+            </label>
+
+            <select id="pais" name="pais" required>
+
+                <option value="">
+                    Seleccionar país
+                </option>
+
+                <option value="El Salvador">
+                    El Salvador
+                </option>
+
+                <option value="Colombia">
+                    Colombia
+                </option>
+
+                <option value="Otro">
+                    Otro país
+                </option>
+
+            </select>
+
+            <label for="correo">
+                Correo electrónico
+            </label>
+
+            <input
+                type="email"
+                id="correo"
+                name="correo"
+                required
+                maxlength="150"
+                placeholder="correo@ejemplo.com"
+            >
+
+            <label for="telefono">
+                Teléfono / WhatsApp
+            </label>
+
+            <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                maxlength="30"
+                placeholder="Número de contacto"
+            >
+
+        </section>
+
+        <section class="seccion">
+
+            <h3>02. ¿Cómo deseas colaborar?</h3>
+
+            <div class="opciones">
+
+                <label>
+                    <input type="checkbox"
+                           name="areas"
+                           value="1">
+                    Voluntariado presencial
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="areas"
+                           value="2">
+                    Apoyo profesional o técnico
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="areas"
+                           value="3">
+                    Apoyo educativo
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="areas"
+                           value="4">
+                    Organización de actividades
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="areas"
+                           value="5">
+                    Comunicación y difusión
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="areas"
+                           value="6">
+                    Apoyo administrativo
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="areas"
+                           value="7">
+                    Donaciones y gestión de recursos
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="areas"
+                           value="8">
+                    Otro tipo de colaboración
+                </label>
+
+            </div>
+
+            <p id="errorAreas" class="error"></p>
+
+        </section>
+
+        <section class="seccion">
+
+            <h3>03. Disponibilidad</h3>
+
+            <label for="modalidad">
+                Modalidad de colaboración
+            </label>
+
+            <select id="modalidad"
+                    name="modalidad"
+                    required>
+
+                <option value="">
+                    Seleccionar modalidad
+                </option>
+
+                <option value="Presencial">
+                    Presencial
+                </option>
+
+                <option value="Virtual">
+                    Virtual
+                </option>
+
+                <option value="Ambas">
+                    Ambas
+                </option>
+
+            </select>
+
+            <label for="disponibilidad">
+                Disponibilidad
+            </label>
+
+            <select id="disponibilidad"
+                    name="disponibilidad"
+                    required>
+
+                <option value="">
+                    Seleccionar disponibilidad
+                </option>
+
+                <option value="Entre semana">
+                    Entre semana
+                </option>
+
+                <option value="Fines de semana">
+                    Fines de semana
+                </option>
+
+                <option value="Horarios flexibles">
+                    Horarios flexibles
+                </option>
+
+                <option value="Ocasional">
+                    Ocasional
+                </option>
+
+            </select>
+
+            <label for="motivacion">
+                ¿Por qué deseas colaborar?
+            </label>
+
+            <textarea
+                id="motivacion"
+                name="motivacion"
+                maxlength="1000"
+                rows="5"
+                placeholder="Cuéntanos un poco sobre tu motivación..."
+            ></textarea>
+
+        </section>
+
+        <section class="seccion">
+
+            <h3>04. Confirmación</h3>
+
+            <label class="privacidad">
+
+                <input
+                    type="checkbox"
+                    id="privacidad"
+                    name="privacidad"
+                    value="1"
+                    required
+                >
+
+                Acepto el tratamiento de mis datos
+                personales conforme a la política
+                de privacidad.
+
+            </label>
+
+        </section>
+
+        <button type="submit" class="btn-enviar">
+
+            ENVIAR SOLICITUD DE REGISTRO
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

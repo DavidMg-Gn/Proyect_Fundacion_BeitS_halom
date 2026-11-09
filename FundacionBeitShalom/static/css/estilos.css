@@ -1,0 +1,154 @@
+/* Configuración general */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f5f8;
+    color: #263445;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+
+.contenedor {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px
+                rgba(0, 0, 0, 0.08);
+}
+
+/* Encabezado */
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.encabezado h1 {
+    color: #173b5e;
+    font-size: 28px;
+}
+
+.encabezado h2 {
+    color: #b18b45;
+    font-size: 25px;
+}
+
+/* Secciones */
+
+.seccion {
+    margin-bottom: 30px;
+    padding: 22px;
+    background: #fafbfd;
+    border: 1px solid #e5eaf0;
+    border-radius: 12px;
+}
+
+.seccion h3 {
+    color: #173b5e;
+    margin-top: 0;
+}
+
+/* Campos */
+
+label {
+    display: block;
+    font-weight: 600;
+    margin: 15px 0 7px;
+}
+
+input:not([type="checkbox"]),
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccd5df;
+    border-radius: 7px;
+    font-size: 16px;
+    background: #ffffff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2877aa;
+    box-shadow: 0 0 0 3px
+                rgba(40, 119, 170, 0.12);
+}
+
+/* Opciones */
+
+.opciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.opciones label,
+.privacidad {
+    font-weight: normal;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* Botón */
+
+.btn-enviar {
+    width: 100%;
+    padding: 16px;
+    background: #173b5e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background: #245d87;
+}
+
+/* Mensajes de validación */
+
+.error {
+    color: #c0392b;
+    font-size: 14px;
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 600px) {
+
+    .contenedor {
+        width: 95%;
+        margin: 15px auto;
+        padding: 18px;
+    }
+
+    .opciones {
+        grid-template-columns: 1fr;
+    }
+
+    .encabezado h1 {
+        font-size: 23px;
+    }
+
+    
+}
